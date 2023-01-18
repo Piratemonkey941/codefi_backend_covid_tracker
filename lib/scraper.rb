@@ -20,7 +20,7 @@ class Scraper
         usa_recoveries      = text_to_int(doc.css(".maincounter-number")[2].text)
         
         Country.new("USA", usa_confirmed_cases, usa_overall_deaths, usa_recoveries)
-        binding.pry
+        # binding.pry
     end
 
     def self.scrape_states
@@ -28,7 +28,7 @@ class Scraper
     end
 end
 
-binding.pry
+# binding.pry
 
 
 # URI.open("https://www.worldometers.info/coronavirus/country/us/")

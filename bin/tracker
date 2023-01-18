@@ -1,5 +1,5 @@
 require './lib/covid_tracker.rb'
 
-Country.new.run
+# Country.new.run
 CLI.new.run
 

@@ -43,4 +43,3 @@ class User
     end
 end
 
-binding.pry
