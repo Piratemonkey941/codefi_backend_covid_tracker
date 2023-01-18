@@ -15,6 +15,7 @@ class Scraper
 
 
     def self.scrape_usa
+        puts "Scrapping U.S.A. COVID information.."
         doc = Nokogiri::HTML(URI.open(SCRAPE_URL))
         usa_confirmed_cases = text_to_int(doc.css(".maincounter-number")[0].text)
         usa_overall_deaths  = text_to_int(doc.css(".maincounter-number")[1].text)
@@ -25,7 +26,7 @@ class Scraper
     end
 
     def self.scrape_states
-        puts "Scrapping U.S. State information.."
+        puts "Scrapping U.S. State COVID information.."
         doc = Nokogiri::HTML(URI.open(SCRAPE_URL))
 
         doc.css('tbody tr')[1..51].each do |state_row|
@@ -40,16 +41,17 @@ class Scraper
             if name != "District Of Columbia"
                 State.new(name, cases, deaths, recoveries)
             end
-        end
-
-
-            
-        binding.pry
+        end            
+    end
+    def self.scrape_information
+        scrape_usa
+        scrape_states
     end
 end
 
 Scraper.scrape_states
 
+# binding.pry
 
 # URI.open("https://www.worldometers.info/coronavirus/country/us/")
 # Element:0x258
