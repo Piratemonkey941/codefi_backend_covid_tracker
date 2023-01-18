@@ -10,3 +10,4 @@ gem "rake", "~> 13.0"
 gem 'open-uri'
 gem 'nokogiri'
 gem 'pry'
+gem 'bcrypt'
