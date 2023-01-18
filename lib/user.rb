@@ -1,6 +1,9 @@
 require 'pry'
+require_relative 'auth.rb'
 
 class User
+    extend Auth
+
     # attr_accessor to define getters and setters for id, username, password
     attr_accessor :id, :username, :password                 
 
@@ -20,17 +23,17 @@ class User
     def self.seed                                            #seed method to seed the user data
         users = 
         [
-            {username: "john123", password: 'password123'},
-            {username: "jane456", password: 'password456'},
-            {username: "mike789", password: 'password789'},
-            {username: "sarah999", password: 'password999'},
-            {username: "david111", password: 'password111'}
+            {username: "john123", password: "password"},
+            {username: "jane456", password: "password"},
+            {username: "mike789", password: "password"},
+            {username: "sarah999", password: "password"},
+            {username: "david111", password: "password"}
         ]
         
         i = 0
         while i < users.count                               # loop through the users array and create new user objects
-            user = users[1]
-            User.new(user[:username], user[:password])
+            user = users[i]
+            User.new(user[:username], create_hash_digest(user[:password]))
             i += 1
         end
 
