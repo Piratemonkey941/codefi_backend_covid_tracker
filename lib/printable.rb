@@ -1,17 +1,9 @@
-module Printable
+module Printable                            # module containing formatting methods for displaying data
 
     module Format
-        def text_to_int(text)
-            text.gsub(/[\s,]/, "").to_i
+        def text_to_int(text)               # formats text to integers
+            text.gsub(/[\s,]/, "").to_i     # replaces whitespace and commas with nothing and converts to an intege
         end
     end
 
 end
-
-
-
-
-
-    # usa_confirmed_cases doc.css(".maincounter-number")[0].text.gsub(/[\s,]/, "").to_i
-    # usa_overall_deaths doc.css(".maincounter-number")[1].text.gsub(/[\s,]/, "").to_i
-    # usa_recoveries doc.css(".maincounter-number")[2].text.gsub(/[\s,]/, "").to_i
