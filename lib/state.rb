@@ -1,3 +1,11 @@
+
+require_relative "country.rb"
+
+class State < Country
+end
+
+#--------------------------------------------------------------
+
 # class Country
 #     attr_accessor :name, :confirmed_cases, :overall_deaths, :recoveries
 #     @@records = []
@@ -17,11 +25,8 @@
 #     end
 # end
 
-#--------------------------------------------------------------
 
-class State < Country
 
-end
 
-missouri = State.new("Missouri",'10', '0', '10')
-puts State.all[0].name
+# missouri = State.new("Missouri",'10', '0', '10')      #needed to be commented out
+# puts State.all[0].name        #needed to be commented out

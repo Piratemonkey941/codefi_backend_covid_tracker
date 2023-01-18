@@ -17,10 +17,10 @@ class Country
     end
 end
 
-usa = Country.new("USA", '10', '0', '10')
-
-puts "There are this many cases in the USA" + usa.confirmed_cases
-
 puts Country.all
+
+# usa = Country.new("USA", '10', '0', '10') #needed to be commented out
+
+# puts "There are this many cases in the USA" + usa.confirmed_cases  #needed to be commented out
     
 #German needs to tell us to run the lib/country.rb
